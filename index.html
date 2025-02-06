@@ -4,9 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Group 1 Fork</h1>
-    <script src="script.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light p-3 zaid-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="./static/logo.png" width="120" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link mx-3" aria-current="page" href="#">Home</a>
+          <a class="nav-link mx-3" href="#">Features</a>
+          <a class="nav-link mx-3" href="#">Pricing</a>
+          <a class="nav-link mx-3" href="#">Disabled</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section">
+      <div><img class="hero-img" src="./static/hero_back.webp" alt="" /></div>
+      <div class="text-in-hero">
+        <h2 class="hero_text">Fitness Help Me Feel Better</h2>
+        <p class="hero-p">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure alias
+          accusamus repellat.
+        </p>
+        <button type="button" class="btn w-25 hero-button">Get started</button>
+      </div>
+    </section>
+
+    <section class="why-choose-us">
+      <div class="container">
+        <h2>Why Choose <span>Us?</span></h2>
+        <p class="y-us-subtitle">
+          We are committed to helping you achieve your fitness goals with expert
+          trainers, flexible schedules, and a supportive community.
+        </p>
+
+        <div class="y-us-cards-cont">
+          <!-- card 1 -->
+          <div class="y-us-card">
+            <img src="./static/muscle.png" alt="Community Icon" />
+            <h3>Expert Trainers</h3>
+            <p>
+              Our certified trainers will guide you with personalized coaching.
+            </p>
+          </div>
+          <!-- card 2 -->
+          <div class="y-us-card">
+            <img src="./static/flexibility.png" alt="Schedule Icon" />
+            <h3>Flexible Schedules</h3>
+            <p>
+              Morning, evening, or weekend—choose a time that works for you.
+            </p>
+          </div>
+
+          <!-- card 3 -->
+          <div class="y-us-card">
+            <img src="./static/solidarity.png" alt="Community Icon" />
+            <h3>Supportive Community</h3>
+            <p>Train with like-minded people and stay motivated together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
