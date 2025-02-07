@@ -143,3 +143,10 @@ h6 {
 .card_information {
   padding: 10px;
 }
+
+@media screen and (min-width: 770px) and (max-width: 995px) {
+  .schedule_pic {
+    width: auto;
+    height: 100%;
+  }
+}
