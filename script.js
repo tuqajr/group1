@@ -7,13 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     day.addEventListener("click", function (e) {
       e.preventDefault();
 
-      // Remove active class from all weekdays
       weekdays.forEach((weekday) => weekday.classList.remove("active"));
 
-      // Add active class to the clicked weekday
       day.classList.add("active");
 
-      // Update card content based on the clicked weekday
       updateCards(day.id);
     });
   });
@@ -57,11 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     };
 
-    // Get data for the selected day
     const cards = cardData[day];
     cardContainer.innerHTML = "";
 
-    // Generate 10 cards in a loop
     for (let i = 1; i <= 10; i++) {
       const cardHTML = `
                 <div class="col">
