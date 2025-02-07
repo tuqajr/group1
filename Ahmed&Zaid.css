@@ -16,8 +16,6 @@
   --font-size-h5: 18px;
   --font-size-h6: 16px;
 
-  
-
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -27,6 +25,9 @@
   --text-secondary: #666;
   --text-light: #999;
   --text-heading: #111;
+
+  --accent-color: #25a385;
+  --background-color: #fff;
 }
 
 body {
@@ -62,4 +63,90 @@ h6 {
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-regular);
   color: var(--text-secondary);
+}
+
+/* Ahmad's section */
+
+.section_title {
+  color: var(--accent-color);
+}
+
+.section_description {
+  color: var(--text-light);
+  text-align: center;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px rgb(209, 209, 209);
+  line-height: normal;
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  background-color: var(--accent-color);
+  transition: 0.5s ease-in-out;
+}
+
+.cards_link {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+.cards_link:hover {
+  color: var(--background-color);
+}
+
+.card_information:hover {
+  color: var(--background-color);
+}
+
+.card-title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-regular);
+}
+
+.week_container {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.weekdays {
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.weekdays:hover {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  transition: 0.5s ease-in-out;
+}
+
+.weekdays {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.weekdays.active {
+  background-color: var(--accent-color);
+  color: var(--background-color); /* Change text color if needed */
+}
+
+.weekdays:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+.card_information {
+  padding: 10px;
+}
+
+@media screen and (min-width: 770px) and (max-width: 995px) {
+  .schedule_pic {
+    width: auto;
+    height: 100%;
+  }
 }
