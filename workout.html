@@ -10,16 +10,78 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="Ahmed&Zaid.css" />
+    <link rel="stylesheet" href="./CSS/zaid.css" />
+    <link rel="stylesheet" href="./CSS/ahmed.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light p-3 zaid-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo.png" width="120" alt=""
+        /></a>
+        <button class="custom-button" id="signup-btn-1">
+          <div id="name-of-user">Signup</div>
+          <i class="fa-solid fa-user icon"></i>
+        </button>
+        <div
+          id="user-menu-main"
+          style="
+            position: absolute;
+            top: 77px;
+            right: 43px;
+            display: none;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              top: -11px;
+              right: 10px;
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 10px solid #ccc;
+            "
+          ></div>
+          <!-- White fill triangle -->
+          <div
+            style="
+              position: absolute;
+              top: -10px;
+              right: 10px;
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 10px solid white;
+            "
+          ></div>
+          <p class="inside-user" id="usersettings">User Settings</p>
+          <p class="inside-user" id="schedule">Schedule</p>
+          <p class="inside-user" id="logout">Log out</p>
+        </div>
+      </div>
+    </nav>
     <section
-      class="container d-flex flex-column align-items-center ahmad_classes_schedule mb-5"
+      class="container d-flex flex-column align-items-center ahmad_classes_schedule mt-0"
     >
       <div
-        class="container pb-0 p-5 mx-sm-4 d-flex flex-column flex-wrap align-items-center"
+        class="container pb-0 p-5 mx-sm-4 d-flex flex-column flex-wrap align-items-center mt-0"
       >
-        <h2 class="section_title">Schedule</h2>
+        <h2 class="section_title">My Schedule</h2>
         <p class="section_description p-2">
           Check our class schedule to plan your workouts. Stay updated and never
           miss a session with times that fit your lifestyle.
@@ -29,331 +91,25 @@
         class="container row justify-content-center pt-0 pb-5 px-2 px-sm-5 mx-sm-4"
       >
         <div class="week_container col d-flex justify-content-center p-0 m-0">
-          <a class="weekdays p-2 px-3" href="#" id="sunday">S</a>
-          <a class="weekdays p-2 px-3" href="#" id="monday">M</a>
-          <a class="weekdays p-2 px-3" href="#" id="tuesday">T</a>
-          <a class="weekdays p-2 px-3" href="#" id="wednesday">W</a>
-          <a class="weekdays p-2 px-3" href="#" id="thursday">T</a>
-          <a class="weekdays p-2 px-3" href="#" id="friday">F</a>
-          <a class="weekdays p-2 px-3" href="#" id="saturday">S</a>
+          <a class="weekdays p-2 px-3" href="#" id="Sunday">S</a>
+          <a class="weekdays p-2 px-3" href="#" id="Monday">M</a>
+          <a class="weekdays p-2 px-3" href="#" id="Tuesday">T</a>
+          <a class="weekdays p-2 px-3" href="#" id="Wednesday">W</a>
+          <a class="weekdays p-2 px-3" href="#" id="Thursday">T</a>
+          <a class="weekdays p-2 px-3" href="#" id="Friday">F</a>
+          <a class="weekdays p-2 px-3" href="#" id="Saturday">S</a>
         </div>
       </div>
       <div
         class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mx-sm-4 card_container"
+        id="card_container"
       >
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-3 img_container">
-                <img
-                  src="https://img.freepik.com/premium-vector/fit-people-doing-exercise_18591-41271.jpg"
-                  class="img-fluid rounded schedule_pic"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="col card_information d-flex flex-column align-items-start justify-content-center p-1"
-              >
-                <p class="card-text">
-                  <small
-                    ><span class="day">Sunday</span>
-                    <span class="start">7:30am</span> -
-                    <span class="end">9:00am</span></small
-                  >
-                </p>
-                <p class="card-title className">Fitness Class Name #9</p>
-                <p class="card-text">
-                  <small
-                    >By <span class="trainer">Justin Daniel</span>,
-                    <span class="duration">30</span> minutes</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 style="text-align: center">
+          Please choose a day to see you're schedule
+        </h2>
       </div>
     </section>
+    <script src="workout.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
