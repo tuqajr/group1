@@ -39,15 +39,19 @@
 //     });
 // });
 document.getElementById("signup-btn-1").addEventListener("click", () => {
-  const loc = JSON.parse(localStorage.getItem("answer"));
-  if (loc && loc.logedin === true) {
+  // const loc = JSON.parse(localStorage.getItem("answer"));
+  const users = JSON.parse(localStorage.getItem("user")) || [];
+
+  // Find the first user who is logged in
+  const loggedInUser = users.find((user) => user.logedin === true);
+
+  if (loggedInUser) {
     let menu = document.getElementById("user-menu-main");
     if (menu.style.display === "block") {
       menu.style.display = "none";
     } else {
       menu.style.display = "block";
     }
-    return;
   } else {
     document.location.href = "./Auth/index.html";
   }
@@ -62,22 +66,36 @@ document.getElementById("schedule").addEventListener("click", () => {
 });
 
 document.getElementById("logout").addEventListener("click", () => {
-  let userData = JSON.parse(localStorage.getItem("answer"));
-  userData.logedin = false;
-  localStorage.setItem("answer", JSON.stringify(userData));
+  let users = JSON.parse(localStorage.getItem("user")) || [];
+
+  let loggedInUser = users.find((user) => user.logedin === true);
+  console.log(loggedInUser);
+
+  if (loggedInUser) {
+    loggedInUser.logedin = false;
+
+    localStorage.setItem("user", JSON.stringify(users));
+  }
+
   document.location.href = "./index.html";
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const loc = JSON.parse(localStorage.getItem("answer")) || "";
-  const logedin = loc.logedin;
-  if (logedin == false) {
-    document.getElementById("name-of-user").innerText = `Signin`;
+  const users = JSON.parse(localStorage.getItem("user")) || [];
+
+  // Find the logged-in user
+  const loggedInUser = users.find((user) => user.logedin === true);
+
+  let nameElement = document.getElementById("name-of-user");
+  console.log(loggedInUser);
+
+  if (!loggedInUser) {
+    nameElement.innerText = "Signup";
+  } else {
+    nameElement.innerText = loggedInUser.name || "Signin";
   }
-  if (!loc) {
-    document.getElementById("name-of-user").innerText = `Signup`;
-  }
-  if (logedin == true) {
-    document.getElementById("name-of-user").innerText = `${loc.name}`;
-  }
+});
+
+document.getElementById("hero-button").addEventListener("click", () => {
+  document.location.href = "./Auth/index.html";
 });

@@ -160,12 +160,14 @@ h6 {
   height: 70px;
   z-index: 1;
   align-self: center;
-  border: #ffffff solid 2px;
+
   color: #ffffff;
+  background-color: var(--primary-color);
   flex: 0 0;
 }
 .btn :hover {
   background-color: #ffffff;
+  color: #25a385;
 }
 /* zaid's section 2  */
 .why-choose-us {

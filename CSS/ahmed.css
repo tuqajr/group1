@@ -149,11 +149,15 @@ h6 {
   padding: 10px;
 }
 
-/* .image-ahmed {
+.image-ahmed {
   height: 87px;
   width: 87px;
-} */
+}
 
 .ahmad_classes_section {
   height: fit-content !important;
+}
+
+.card:hover {
+  color: #eee;
 }

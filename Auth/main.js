@@ -27,7 +27,7 @@ document.getElementById("form1").addEventListener("submit", (event) => {
   const password = document.getElementById("password").value;
   const name = document.getElementById("name").value;
 
-  const loc = JSON.parse(localStorage.getItem("answer")) || [];
+  const loc = JSON.parse(localStorage.getItem("user")) || [];
   console.log(loc.email);
   console.log(email);
 
@@ -50,10 +50,13 @@ document.getElementById("form1").addEventListener("submit", (event) => {
     document.getElementById("answer").innerHTML =
       "You're password doesnt match the confirmed one try again";
   }
-  if (email === loc.email) {
-    document.getElementById("answer").style.color = "red";
-    document.getElementById("answer").innerHTML =
-      "You have an account with this email address";
+  for (let i = 0; i < loc.length; i++) {
+    if (loc[i].email == email) {
+      document.getElementById("answer").style.color = "red";
+      document.getElementById("answer").innerHTML =
+        "Email already exists, please choose a different one";
+      return;
+    }
   }
   if (
     email &&
@@ -65,15 +68,32 @@ document.getElementById("form1").addEventListener("submit", (event) => {
     password.length > 8 &&
     email !== loc.email
   ) {
-    localStorage.setItem(
-      "answer",
-      JSON.stringify({
-        name: name,
-        email: email,
-        password: password,
-        logedin: false,
-      })
-    );
+    // Retrieve existing users from localStorage
+    let users = JSON.parse(localStorage.getItem("user"));
+
+    // Ensure users is an array (fixes overwrite issue)
+    if (!Array.isArray(users)) {
+      users = [];
+    }
+
+    console.log(users); // Check if existing users are correctly retrieved
+
+    // Create a new user object
+    let newUser = {
+      name: name,
+      email: email,
+      password: password,
+      logedin: false,
+      fav: [],
+    };
+    console.log(newUser);
+
+    // Push the new user to the array
+    users.push(newUser);
+
+    // Save the updated users array back to localStorage
+    localStorage.setItem("user", JSON.stringify(users));
+
     document.getElementById("answer").innerHTML = "";
     appending(2);
     localStorage.setItem("append", "2");
@@ -97,37 +117,40 @@ form.addEventListener("input", () => {
 
 document.getElementById("form2").addEventListener("submit", (event) => {
   event.preventDefault();
-  const email2 = document.getElementById("email2").value || "";
-  const password2 = document.getElementById("password2").value || "";
+  const email2 = document.getElementById("email2").value.trim();
+  const password2 = document.getElementById("password2").value.trim();
 
-  let r = JSON.parse(localStorage.getItem("answer"));
-
-  if (r == null) {
+  // Retrieve users array from localStorage
+  let users = JSON.parse(localStorage.getItem("user")) || [];
+  console.log(users.length);
+  
+  // Check if users array is empty
+  if (users.length === 0) {
     document.getElementById("answer2").style.color = "red";
     document.getElementById("answer2").innerHTML = "You don't have an account!";
-  }
-  if (email2 !== r.email) {
-    document.getElementById("answer2").style.color = "red";
-    document.getElementById("answer2").innerHTML =
-      "You're email doesnt match the confirmed one try again";
-  }
+  } else {
+    // Find a user with matching email
+    let foundUser = users.find((user) => user.email === email2);
 
-  if (password2 != r.password) {
-    document.getElementById("answer2").style.color = "red";
-    document.getElementById("answer2").innerHTML =
-      "You're pass doesnt match the confirmed one try again";
-  }
-  if (email2 && password2 && password2 === r.password && email2 === r.email) {
-    document.getElementById("answer2").style.color = "green";
-    document.getElementById("answer2").innerHTML =
-      "Form Submitted Successfully";
-    let userData = JSON.parse(localStorage.getItem("answer"));
-    userData.logedin = true; 
-    localStorage.setItem("answer", JSON.stringify(userData));
+    if (!foundUser) {
+      document.getElementById("answer2").style.color = "red";
+      document.getElementById("answer2").innerHTML = "Email not found!";
+    } else if (foundUser.password !== password2) {
+      document.getElementById("answer2").style.color = "red";
+      document.getElementById("answer2").innerHTML = "Incorrect password!";
+    } else {
+      // Mark the user as logged in
+      foundUser.logedin = true;
 
-    setTimeout(() => {
-      window.location.href = "../index.html";
-    }, 200);
+      // Save the updated users array back to localStorage
+      localStorage.setItem("user", JSON.stringify(users));
+
+      document.getElementById("answer2").style.color = "green";
+      document.getElementById("answer2").innerHTML = "Login Successful!";
+      setTimeout(() => {
+        location.href = "../index.html";
+      }, 1000);
+    }
   }
 });
 document.getElementById("form2").addEventListener("input", () => {
