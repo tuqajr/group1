@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then((data) => {
-      fetchedArray = data.record;
+      fetchedArray = data.record.record;
     });
 
   const weekdays = document.querySelectorAll(".weekdays");
