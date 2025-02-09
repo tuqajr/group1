@@ -1,15 +1,54 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
 
+.x {
+  padding: 10px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* background-color: blue; */
+  border-radius: 35px;
+  flex: 1 0 350px;
+}
+.x:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+/* .person {
+  flex: 1 1 0;
+} */
 
-
-body { margin: 20px; }
-.person img { width: 100%; height: auto; border-radius: 50%; }
-.person h3 { margin-top: 15px; font-size: 1.5em; }
-.person p.position { font-style: italic; color: #888; margin-bottom: 10px; }
-.person p { color: #555; }
-.section-heading span { color: #6c757d; font-size: 1.2em; }
-.section-heading h2 { font-size: 2.5em; margin-bottom: 20px; }
-.site-section { padding: 60px 0; }
+/* .person img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.person h3 {
+  margin-top: 15px;
+  font-size: 1.5em;
+} */
+.person p.position {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 10px;
+}
+.person p {
+  font-size: 14px;
+  color: #555;
+  padding: 0px 24px;
+}
+.section-heading span {
+  color: #6c757d;
+  font-size: 1.2em;
+}
+.section-heading h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.site-section {
+  padding: 60px 0;
+  height: fit-content;
+}
+.h {
+  height: fit-content;
+}
 
 /* Base */
 .section-heading .subheading {
@@ -18,7 +57,7 @@ body { margin: 20px; }
 }
 
 .section-heading .heading {
-  color: #c83660;
+  color: #25a385;
   font-size: 2.5rem;
   font-weight: 900;
 }
@@ -42,6 +81,8 @@ body { margin: 20px; }
   font-weight: bold;
 }
 
-.person p {
-  font-size: 15px;
+@media screen and (max-width: 750px) {
+  .site-section {
+    height: fit-content;
+  }
 }
