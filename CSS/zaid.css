@@ -260,7 +260,7 @@ h2 span {
 
   .why-choose-us {
     align-items: baseline;
-    height: 80vh;
+    height: fit-content;
     margin-bottom: 0px;
   }
   .container {
