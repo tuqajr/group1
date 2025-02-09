@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./CSS/ahmed.css" />
+    <link rel="stylesheet" href="./CSS/zaid.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light p-3 zaid-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo.png" width="120" alt=""
+        /></a>
+        <button class="custom-button" id="signup-btn-1">
+          <div id="name-of-user">Signup</div>
+          <i class="fa-solid fa-user icon"></i>
+        </button>
+        <div
+          id="user-menu-main"
+          style="
+            position: absolute;
+            top: 77px;
+            right: 43px;
+            display: none;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              top: -11px;
+              right: 10px;
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 10px solid #ccc;
+            "
+          ></div>
+          <!-- White fill triangle -->
+          <div
+            style="
+              position: absolute;
+              top: -10px;
+              right: 10px;
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 10px solid white;
+            "
+          ></div>
+          <p class="inside-user" id="usersettings">User Settings</p>
+          <p class="inside-user" id="schedule">Schedule</p>
+          <p class="inside-user" id="logout">Log out</p>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="container d-flex flex-column align-items-center ahmad_classes_schedule mt-0"
+    >
+      <div
+        class="container pb-0 p-5 mx-sm-4 d-flex flex-column flex-wrap align-items-center mt-0"
+      >
+        <h2 class="section_title">My Schedule</h2>
+        <p class="section_description p-2">
+          Check our class schedule to plan your workouts. Stay updated and never
+          miss a session with times that fit your lifestyle.
+        </p>
+      </div>
+      <div class="container row justify-content-center pt-0 p-2 mx-sm-4">
+        <div class="week_container col- d-flex justify-content-between p-0 m-0">
+          <a class="weekdays p-2 px-3" href="#" id="Sunday">S</a>
+          <a class="weekdays p-2 px-3" href="#" id="Monday">M</a>
+          <a class="weekdays p-2 px-3" href="#" id="Tuesday">T</a>
+          <a class="weekdays p-2 px-3" href="#" id="Wednesday">W</a>
+          <a class="weekdays p-2 px-3" href="#" id="Thursday">T</a>
+          <a class="weekdays p-2 px-3" href="#" id="Friday">F</a>
+          <a class="weekdays p-2 px-3" href="#" id="Saturday">S</a>
+        </div>
+      </div>
+      <div
+        class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mx-sm-4 card_container"
+        id="card_container"
+      >
+        <h2 style="text-align: center">
+          Please choose a day to see you're schedule
+        </h2>
+      </div>
+    </section>
+    <script src="workout.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
